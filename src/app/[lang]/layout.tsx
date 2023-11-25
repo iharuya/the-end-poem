@@ -75,18 +75,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
-      <body
-        className={clsx(
-          inter.className,
-          "w-full h-full overflow-y-auto",
-          styles.background,
-        )}
-      >
-        <LocaleSwitcher
-          currentLocale={params.lang}
-          className="w-[160px] fixed top-4 right-2 md:top-8 md:right-4"
-        />
-        <div>{children}</div>
+      <body className={clsx(inter.className, "w-full h-full")}>
+        <div className={styles.background}>
+          <LocaleSwitcher
+            currentLocale={params.lang}
+            className="w-[160px] fixed z-10 top-4 right-2 md:top-8 md:right-4"
+          />
+          <div className="absolute inset-0 overflow-y-auto">{children}</div>
+        </div>
       </body>
     </html>
   )

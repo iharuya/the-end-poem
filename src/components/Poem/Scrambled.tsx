@@ -9,7 +9,7 @@ type Props = {
   className?: string
 }
 export const Scrambled: React.FC<Props> = ({ length = 10, className }) => {
-  const [text, setText] = useState(getRandomString(length))
+  const [text, setText] = useState("a".repeat(length))
   useEffect(() => {
     const interval = setInterval(() => {
       setText(getRandomString(length))

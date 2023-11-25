@@ -27,7 +27,7 @@ export default async function Page({
     )
   }
   return (
-    <main className="flex min-h-screen flex-col items-center text-white">
+    <main className="flex flex-col items-center text-white">
       <Image
         src={MinecraftBanner}
         alt="Minecraft"
@@ -40,6 +40,7 @@ export default async function Page({
         locale={params.lang}
         playerName={searchParams.playerName}
       />
+      <div className="h-screen"></div>
     </main>
   )
 }
