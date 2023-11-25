@@ -30,7 +30,7 @@ export const LocaleSwitcher: React.FC<Props> = ({
       <label className={clsx("relative")}>
         <p className="sr-only">言語を変更</p>
         <select
-          className="bg-[#787D7D] border-2 border-t-[#AFADAF] border-l-[#AFADAF] border-b-[#535552] border-r-[#535552] w-full px-2 py-1 text-[#D8D8D8] shadow-black shadow-sm font-bold text-xl"
+          className="bg-[#787D7D] border-2 border-t-[#AFADAF] border-l-[#AFADAF] border-b-[#535552] border-r-[#535552] w-full px-2 py-1 text-[#D8D8D8] shadow-black shadow-sm rounded-none font-bold text-xl"
           defaultValue={currentLocale}
           onChange={onSelectChange}
         >

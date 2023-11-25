@@ -27,7 +27,7 @@ export const PlayerNameInput: React.FC<Props> = ({ className, locale }) => {
       <p className="text-[#585858] mb-2">プレイヤー名を入力してください</p>
       <input
         type="text"
-        className="bg-[#4E4737] border-2 border-t-[#373737] border-l-[#373737] border-b-[#FFFFFF] border-r-[#FFFFFF] px-1 py-1 shadow-inner text-[#FFFFFF] w-full mb-1"
+        className="bg-[#4E4737] border-2 border-t-[#373737] border-l-[#373737] border-b-[#FFFFFF] border-r-[#FFFFFF] px-1 py-1 shadow-inner rounded-none text-[#FFFFFF] w-full mb-1"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />

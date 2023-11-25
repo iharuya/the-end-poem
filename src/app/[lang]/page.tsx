@@ -4,6 +4,7 @@ import Image from "next/image"
 import MinecraftBanner from "@images/minecraft-banner.webp"
 import { Poem } from "@/components/Poem"
 import { Scroller } from "@/components/Scroller"
+import { BGM } from "@/components/Poem/BGM"
 
 const isValidSearchParams = (params: {
   [key: string]: string | string[] | undefined
@@ -28,22 +29,25 @@ export default async function Page({
     )
   }
   return (
-    <Scroller>
-      <main className="flex flex-col items-center text-white">
-        <Image
-          src={MinecraftBanner}
-          alt="Minecraft"
-          width={500}
-          className="mx-auto"
-        />
-        <h1 className="text-4xl font-bold">The End Poem</h1>
-        <Poem
-          className="px-2 max-w-3xl mx-auto pt-24 pb-24"
-          locale={params.lang}
-          playerName={searchParams.playerName}
-        />
-        <div className="h-screen"></div>
-      </main>
-    </Scroller>
+    <>
+      <BGM className="fixed top-4 left-2 md:top-8 md:left-8" />
+      <Scroller>
+        <main className="flex flex-col items-center text-white">
+          <Image
+            src={MinecraftBanner}
+            alt="Minecraft"
+            width={500}
+            className="mx-auto"
+          />
+          <h1 className="text-4xl font-bold">The End Poem</h1>
+          <Poem
+            className="px-2 max-w-3xl mx-auto pt-24 pb-24"
+            locale={params.lang}
+            playerName={searchParams.playerName}
+          />
+          <div className="h-screen"></div>
+        </main>
+      </Scroller>
+    </>
   )
 }
