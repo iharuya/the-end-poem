@@ -79,7 +79,7 @@ export default function RootLayout({
         <div className={styles.background}>
           <LocaleSwitcher
             currentLocale={params.lang}
-            className="w-[160px] fixed z-10 top-4 right-2 md:top-8 md:right-4"
+            className="w-[160px] fixed z-10 top-4 right-2 md:top-8 md:right-8"
           />
           <div className="absolute inset-0 overflow-y-auto">{children}</div>
         </div>
