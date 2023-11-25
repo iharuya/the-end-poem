@@ -1,0 +1,17 @@
+{
+  "app": {
+    "title": "The End Poem",
+    "description": "For those who skipped the Minecraft creadits after defeating the Ender Dragon."
+  },
+
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, ja {日本語} en {English} other {Unknown}}"
+  },
+
+  "playerNameInput": {
+    "label": "Enter your player name",
+    "validationError": "Must be 1-20 characters.",
+    "enter": "Read the End Poem"
+  }
+}
