@@ -1,0 +1,7 @@
+{
+  "playerNameInput": {
+    "label": "プレイヤー名を入力してください",
+    "validationError": "1文字以上20文字以下で入力してください",
+    "enter": "詩を読む"
+  }
+}
