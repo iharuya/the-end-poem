@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next"
+import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "../globals.css"
 import styles from "./layout.module.css"
@@ -8,6 +8,7 @@ import { Locale, locales } from "@/lib/locale"
 import { BASE_URL } from "@/data/baseUrl"
 import { getMessages } from "@/messages"
 import { notFound } from "next/navigation"
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -77,6 +78,7 @@ export default function RootLayout({
           />
           <div className="absolute inset-0 overflow-y-auto">{children}</div>
         </div>
+        <Analytics />
       </body>
     </html>
   )
