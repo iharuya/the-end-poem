@@ -40,11 +40,11 @@ export const JA: React.FC<Props> = ({ playerName }) => {
       </Green>
       <Blue>
         できたんだよ。それは100万人の他の人々と協力して、
-        <Scrambled length={10} />
+        <Scrambled />
         の集まりが真の世界を形作り、
-        <Scrambled length={10} />で<Scrambled length={10} />
+        <Scrambled />で<Scrambled />
         のために
-        <Scrambled length={10} />
+        <Scrambled />
         を創造したのさ。
       </Blue>
       <Green>この子は今の思考を読めていないわ。</Green>
@@ -69,12 +69,12 @@ export const JA: React.FC<Props> = ({ playerName }) => {
       <Blue>この子はボクたちの思考を読んでいるよ。</Blue>
       <Green>
         気にしないわ。たまに本当に教えてあげたくなるの。あなたたちが真実と思い込んでいるこの世界はただの
-        <Scrambled length={10} />
+        <Scrambled />
         で、あなたたちは
-        <Scrambled length={10} />の<Scrambled length={10} />
+        <Scrambled />の<Scrambled />
         なんだってことを。この子は長い夢の中で、ほとんど本当の世界を見ていないのよ。
       </Green>
-      <Blue>それでもこの子はゲームをプレイしているね。</Blue>
+      <Blue>それでもこの子たちはゲームをプレイしているね。</Blue>
       <Green>教えてあげるのはとっても簡単なのに...</Green>
       <Blue>
         この夢には影響が大きすぎるんだ。この子に生き方を教えることは、この子の生き方を阻害することになる。

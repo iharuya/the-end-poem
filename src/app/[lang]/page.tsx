@@ -36,6 +36,7 @@ export default async function Page({
             alt="Minecraft"
             width={500}
             className="mx-auto"
+            priority
           />
           <Poem
             className="px-2 max-w-3xl mx-auto pt-24 pb-24"
