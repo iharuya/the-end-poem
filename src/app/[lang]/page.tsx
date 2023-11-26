@@ -3,8 +3,8 @@ import { Locale } from "@/lib/locale"
 import Image from "next/image"
 import MinecraftBanner from "@images/minecraft-banner.webp"
 import { Poem } from "@/components/Poem"
-import { Scroller } from "@/components/Scroller"
 import { BGM } from "@/components/Poem/BGM"
+import { Controller } from "@/components/Poem/Controller"
 
 const isValidSearchParams = (params: {
   [key: string]: string | string[] | undefined
@@ -29,7 +29,7 @@ export default async function Page({
   return (
     <>
       <BGM className="fixed top-4 left-2 md:top-8 md:left-8" />
-      <Scroller>
+      <Controller>
         <main className="flex flex-col items-center text-white">
           <Image
             src={MinecraftBanner}
@@ -45,7 +45,7 @@ export default async function Page({
           />
           <div className="h-screen"></div>
         </main>
-      </Scroller>
+      </Controller>
     </>
   )
 }

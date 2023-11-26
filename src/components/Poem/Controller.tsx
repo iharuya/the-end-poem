@@ -1,14 +1,18 @@
 "use client"
-import React, { useCallback, useEffect, useRef, useState } from "react"
+import { useLocale } from "@/hooks/useLocale"
+import { useRouter } from "next/navigation"
+import React, { useCallback, useEffect, useRef } from "react"
 
 type Props = {
   speed?: number
 }
-export const Scroller: React.FC<React.PropsWithChildren<Props>> = ({
+export const Controller: React.FC<React.PropsWithChildren<Props>> = ({
   children,
   speed = 20,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
+  const router = useRouter()
+  const locale = useLocale()
 
   // Automatic scrolling
   useEffect(() => {
@@ -79,6 +83,19 @@ export const Scroller: React.FC<React.PropsWithChildren<Props>> = ({
   const handleTouchStart = useCallback((event: React.TouchEvent) => {
     lastTouchRef.current = event.touches[0].clientY
   }, [])
+
+  // if esc is pressed, redirect to /
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.code === "Escape") {
+        event.preventDefault()
+        router.push(`/${locale}`)
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [locale, router])
 
   return (
     <div
