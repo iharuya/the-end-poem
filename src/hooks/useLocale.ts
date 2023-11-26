@@ -1,4 +1,4 @@
-import { Locale } from "@/data/locale"
+import { Locale } from "@/lib/locale"
 import { useParams } from "next/navigation"
 
 export const useLocale = () => {

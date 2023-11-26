@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { Locale } from "@/data/locale"
+import { Locale } from "@/lib/locale"
 import { JA } from "./translations/JA"
 import { EN } from "./translations/EN"
 

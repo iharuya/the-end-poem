@@ -4,7 +4,7 @@ import "../globals.css"
 import styles from "./layout.module.css"
 import clsx from "clsx"
 import { LocaleSwitcher } from "@/components/LocaleSwitch"
-import { Locale, locales } from "@/data/locale"
+import { Locale, locales } from "@/lib/locale"
 import { BASE_URL } from "@/data/baseUrl"
 import { getMessages } from "@/messages"
 import { notFound } from "next/navigation"
@@ -56,7 +56,7 @@ export const generateMetadata = async ({
           height: 630,
         },
       ],
-      locale: "ja_JP",
+      locale: lang,
     },
     twitter: {
       card: "summary_large_image",

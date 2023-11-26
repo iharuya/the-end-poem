@@ -9,12 +9,11 @@ export const Scroller: React.FC<React.PropsWithChildren<Props>> = ({
   speed = 20,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [isAutoScrolling, setIsAutoScrolling] = useState(true)
 
   // Automatic scrolling
   useEffect(() => {
     const container = containerRef.current
-    if (!container || !isAutoScrolling) return
+    if (!container) return
 
     const interval = setInterval(() => {
       if (
@@ -28,7 +27,7 @@ export const Scroller: React.FC<React.PropsWithChildren<Props>> = ({
     }, 1000 / speed)
 
     return () => clearInterval(interval)
-  }, [isAutoScrolling, speed])
+  }, [speed])
 
   // desktop controls
   useEffect(() => {

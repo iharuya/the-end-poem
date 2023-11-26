@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import plugin from "tailwindcss/plugin"
 
 const config: Config = {
   content: [
@@ -7,6 +8,10 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {},
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant("hocus", ["&:hover", "&:focus"])
+    }),
+  ],
 }
 export default config

@@ -1,4 +1,4 @@
-import { Locale } from "@/data/locale"
+import { Locale } from "@/lib/locale"
 
 export type MessagesJP = typeof import("./ja.json")
 export type MessagesEN = typeof import("./en.json")

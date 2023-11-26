@@ -12,3 +12,7 @@ export const getMessages = async <T extends Locale>(
 ): Promise<LocaleMessages[T]> => {
   return (await import(`./${locale}.json`)).default satisfies LocaleMessages[T]
 }
+
+export const getLocales = async () => {
+  return (await import("./locales.json")).default as Record<Locale, string>
+}

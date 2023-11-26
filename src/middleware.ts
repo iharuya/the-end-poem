@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server"
-import { locales } from "./data/locale"
+import { locales } from "./lib/locale"
 
 // eslint-disable @typescript-eslint/no-unused-vars
 const getLocale = (req: NextRequest) => {

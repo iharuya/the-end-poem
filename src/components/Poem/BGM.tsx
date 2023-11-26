@@ -16,7 +16,7 @@ export const BGM: React.FC<Props> = ({ className }) => {
     audio.play()
     setIsPlaying(true)
     return () => audio.pause()
-  }, [audioRef.current])
+  }, [])
 
   const toggle = () => {
     const audio = audioRef.current
