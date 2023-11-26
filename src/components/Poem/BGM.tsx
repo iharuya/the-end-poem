@@ -35,11 +35,15 @@ export const BGM: React.FC<Props> = ({ className }) => {
       <audio loop ref={audioRef}>
         <source src={`/music/minecraft-credits.mp3`} />
       </audio>
-      <Button className="text-white text-3xl md:text-4xl" onClick={toggle}>
+      <Button
+        className="text-white text-3xl md:text-4xl"
+        onClick={toggle}
+        aria-label={isPlaying ? "Pause" : "Play"}
+      >
         {isPlaying ? (
-          <Icon icon="mdi:volume-high" aria-label="Pause" />
+          <Icon icon="mdi:volume-high" />
         ) : (
-          <Icon icon="mdi:volume-off" aria-label="Play" />
+          <Icon icon="mdi:volume-off" />
         )}
       </Button>
     </div>

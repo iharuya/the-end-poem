@@ -15,12 +15,6 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ lang: locale }))
 }
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1.0,
-  maximumScale: 1.0,
-}
-
 export const generateMetadata = async ({
   params: { lang },
 }: {

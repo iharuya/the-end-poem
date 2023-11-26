@@ -34,13 +34,12 @@ export const Scroller: React.FC<React.PropsWithChildren<Props>> = ({
     const handleKeyDown = (event: KeyboardEvent) => {
       const container = containerRef.current
       if (!container) return
-      event.preventDefault()
-
       if (
         event.code === "ArrowUp" ||
         event.code === "ArrowDown" ||
         event.code === "Space"
       ) {
+        event.preventDefault()
         const scrollAmount = event.code === "ArrowUp" ? -speed : speed
         container.scrollTop += scrollAmount / 10
       }
@@ -57,7 +56,7 @@ export const Scroller: React.FC<React.PropsWithChildren<Props>> = ({
       }
     }
 
-    window.addEventListener("keydown", handleKeyDown, { passive: false })
+    window.addEventListener("keydown", handleKeyDown)
     window.addEventListener("wheel", handleWheel, { passive: false })
     return () => {
       window.removeEventListener("keydown", handleKeyDown)
