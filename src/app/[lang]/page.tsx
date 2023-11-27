@@ -5,6 +5,8 @@ import MinecraftBanner from "@images/minecraft-banner.webp"
 import { Poem } from "@/components/Poem"
 import { BGM } from "@/components/Poem/BGM"
 import { Controller } from "@/components/Poem/Controller"
+import { AuthorCredits } from "@/components/AuthorCredits"
+import { getMessages } from "@/messages"
 
 const isValidSearchParams = (params: {
   [key: string]: string | string[] | undefined
@@ -19,6 +21,7 @@ export default async function Page({
   searchParams: { [key: string]: string | string[] | undefined }
   params: { lang: Locale }
 }) {
+  const messages = await getMessages(params.lang)
   if (!isValidSearchParams(searchParams)) {
     return (
       <main className="h-screen flex flex-col items-center justify-center">
@@ -43,7 +46,9 @@ export default async function Page({
             locale={params.lang}
             playerName={searchParams.playerName}
           />
-          <div className="h-screen"></div>
+          <div className="h-screen flex flex-col justify-center items-center">
+            <AuthorCredits message={messages.authorCreditsMessage} />
+          </div>
         </main>
       </Controller>
     </>

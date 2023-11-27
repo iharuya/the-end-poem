@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import "../globals.css"
 import styles from "./layout.module.css"
 import clsx from "clsx"
@@ -9,8 +8,27 @@ import { BASE_URL } from "@/data/baseUrl"
 import { getMessages } from "@/messages"
 import { notFound } from "next/navigation"
 import { Analytics } from "@vercel/analytics/react"
+import localFont from "next/font/local"
 
-const inter = Inter({ subsets: ["latin"] })
+const minecraftFont = localFont({
+  src: [
+    {
+      path: "../fonts/minecraft/Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/minecraft/Regular.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/minecraft/Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+})
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ lang: locale }))
@@ -70,7 +88,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
-      <body className={clsx(inter.className, "w-full h-full")}>
+      <body className={clsx(minecraftFont.className, "w-full h-full")}>
         <div className={styles.background}>
           <LocaleSwitcher
             currentLocale={params.lang}

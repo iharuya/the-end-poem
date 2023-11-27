@@ -1,17 +1,14 @@
 {
   "app": {
     "title": "終わりの詩",
-    "description": "エンダードラゴンを倒して現世に帰るとき、Escキーを押してあのエンドロールをスキップしてしまった人へ。"
-  },
-
-  "LocaleSwitcher": {
-    "label": "言語選択",
-    "locale": "{locale, select, ja {日本語} en {English} other {不明}}"
+    "description": "Minecraftでエンダードラゴンを倒した後のエンドロールには、とても深い意味が隠されていた..."
   },
 
   "playerNameInput": {
     "label": "プレイヤー名を入力してください",
     "validationError": "1文字以上20文字以下で入力してください",
     "enter": "詩を読む"
-  }
+  },
+
+  "authorCreditsMessage": "この作品を創った[author]さんに感謝します。"
 }

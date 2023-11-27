@@ -44,5 +44,5 @@ export async function goToPoem(prevState: State, formData: FormData) {
     }
   }
   const { playerName } = validatedFields.data
-  redirect(`/${locale}?playerName=${playerName}`)
+  redirect(`/${locale}?playerName=${encodeURIComponent(playerName)}`)
 }
