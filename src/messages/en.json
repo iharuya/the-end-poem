@@ -1,14 +1,14 @@
 {
-  "app": {
-    "title": "The End Poem",
-    "description": "After defeating the Ender Dragon in Minecraft, the end credits reveal a deeply meaningful poem..."
-  },
+	"app": {
+		"title": "The End Poem",
+		"description": "After defeating the Ender Dragon in Minecraft, the end credits reveal a deeply meaningful poem..."
+	},
 
-  "playerNameInput": {
-    "label": "Enter your player name",
-    "validationError": "Must be 1-20 characters.",
-    "enter": "Read the End Poem"
-  },
+	"playerNameInput": {
+		"label": "Enter your player name",
+		"validationError": "Must be 1-20 characters.",
+		"enter": "Read the End Poem"
+	},
 
-  "authorCreditsMessage": "Special thanks to [author] for this exceptional work."
+	"authorCreditsMessage": "Special thanks to [author] for this exceptional work."
 }

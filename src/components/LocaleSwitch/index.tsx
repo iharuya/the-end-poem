@@ -1,5 +1,6 @@
 import { Locale } from "@/lib/locale"
 import clsx from "clsx"
+import { FC, Suspense } from "react"
 import { Select } from "./Select"
 import { getLocales, getMessages } from "./translations"
 
@@ -7,9 +8,9 @@ type Props = {
   className?: string
   currentLocale: Locale
 }
-export const LocaleSwitcher: React.FC<Props> = async ({
+export const LocaleSwitcher: FC<Props> = async ({
   className,
-  currentLocale,
+  currentLocale
 }) => {
   const messages = await getMessages(currentLocale)
   const localeMap = await getLocales()
@@ -17,7 +18,9 @@ export const LocaleSwitcher: React.FC<Props> = async ({
     <div className={clsx(className)}>
       <label className={clsx("relative")}>
         <p className="sr-only">{messages.selectLanguage}</p>
-        <Select currentLocale={currentLocale} localeMap={localeMap} />
+        <Suspense>
+          <Select currentLocale={currentLocale} localeMap={localeMap} />
+        </Suspense>
       </label>
     </div>
   )

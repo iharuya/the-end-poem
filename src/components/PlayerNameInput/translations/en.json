@@ -1,8 +1,8 @@
 {
-  "label": "Enter your player name",
-  "enter": "Read the End Poem",
-  "error": {
-    "tooShort": "Your name is too short",
-    "tooLong": "Your name is too long"
-  }
+	"label": "Enter your player name",
+	"enter": "Read the End Poem",
+	"error": {
+		"tooShort": "Your name is too short",
+		"tooLong": "Your name is too long"
+	}
 }
