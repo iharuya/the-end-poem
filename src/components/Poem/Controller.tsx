@@ -5,7 +5,6 @@ import React, {
 	FC,
 	PropsWithChildren,
 	TouchEventHandler,
-	useCallback,
 	useEffect,
 	useRef
 } from "react"
@@ -77,25 +76,19 @@ export const Controller: FC<PropsWithChildren<Props>> = ({
 
 	// Touch controls
 	const lastTouchRef = useRef<number>(0)
-	const handleTouchMove: TouchEventHandler<HTMLDivElement> = useCallback(
-		(event) => {
-			const touchY = event.touches[0].clientY
-			const container = containerRef.current
-			if (!container) return
+	const handleTouchMove: TouchEventHandler<HTMLDivElement> = (event) => {
+		const touchY = event.touches[0].clientY
+		const container = containerRef.current
+		if (!container) return
 
-			const deltaY = lastTouchRef.current - touchY
-			container.scrollTop += deltaY
-			lastTouchRef.current = touchY
-		},
-		[]
-	)
+		const deltaY = lastTouchRef.current - touchY
+		container.scrollTop += deltaY
+		lastTouchRef.current = touchY
+	}
 
-	const handleTouchStart: TouchEventHandler<HTMLDivElement> = useCallback(
-		(event) => {
-			lastTouchRef.current = event.touches[0].clientY
-		},
-		[]
-	)
+	const handleTouchStart: TouchEventHandler<HTMLDivElement> = (event) => {
+		lastTouchRef.current = event.touches[0].clientY
+	}
 
 	// if esc is pressed, redirect to /
 	useEffect(() => {
