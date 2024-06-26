@@ -1,28 +1,28 @@
-'use client';
-import { Locale } from '@/lib/locale';
-import clsx from 'clsx';
-import { FC, useActionState } from 'react';
-import { Button } from '../Button';
-import { State, goToPoem } from './actions';
+"use client"
+import { Locale } from "@/lib/locale"
+import clsx from "clsx"
+import { FC, useActionState } from "react"
+import { Button } from "../Button"
+import { State, goToPoem } from "./actions"
 
 type Props = {
-	className?: string;
-	locale: Locale;
+	className?: string
+	locale: Locale
 	messages: {
-		label: string;
-		enter: string;
-	};
-};
+		label: string
+		enter: string
+	}
+}
 export const Form: FC<Props> = ({ className, locale, messages }) => {
-	const initState: State = { errors: {} };
-	const [state, dispatch] = useActionState(goToPoem, initState);
+	const initState: State = { errors: {} }
+	const [state, dispatch] = useActionState(goToPoem, initState)
 
 	return (
 		<form
 			action={dispatch}
 			className={clsx(
-				'bg-[#C6C6C6] border-2 border-t-[#FFFFFF] border-l-[#FFFFFF] border-b-[#555555] border-r-[#555555] px-6 py-6 w-full max-w-sm',
-				className,
+				"bg-[#C6C6C6] border-2 border-t-[#FFFFFF] border-l-[#FFFFFF] border-b-[#555555] border-r-[#555555] px-6 py-6 w-full max-w-sm",
+				className
 			)}
 		>
 			<input type="hidden" name="locale" value={locale} />
@@ -49,5 +49,5 @@ export const Form: FC<Props> = ({ className, locale, messages }) => {
 				{messages.enter}
 			</Button>
 		</form>
-	);
-};
+	)
+}

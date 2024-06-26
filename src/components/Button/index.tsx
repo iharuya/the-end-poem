@@ -1,9 +1,7 @@
 import clsx from "clsx"
 import { ButtonHTMLAttributes, FC } from "react"
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
-	className?: string
-}
+type Props = ButtonHTMLAttributes<HTMLButtonElement>
 
 export const Button: FC<Props> = ({ className, children, ...props }) => {
 	return (
