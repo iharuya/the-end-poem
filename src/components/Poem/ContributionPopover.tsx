@@ -8,14 +8,14 @@ export const ContributionPopover: FC<PropsWithChildren> = ({ children }) => {
 	const popoverRef = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
-		const handleMouseUp = () => {
+		const handleMouseUp = (e: MouseEvent) => {
 			if (!popoverRef.current) return
 			const popoverDisabled = localStorage.getItem("popover-disabled")
 
 			const selection = window.getSelection()
-			const anchor = selection?.anchorNode
+			const target = e.target as Node
 			// if it is inside popover, do nothing
-			if (anchor && popoverRef.current.contains(anchor)) return
+			if (popoverRef.current.contains(target)) return
 
 			const text = selection?.toString().trim() ?? null
 			if (
@@ -68,7 +68,10 @@ export const ContributionPopover: FC<PropsWithChildren> = ({ children }) => {
 							<Checkbox
 								id="contribution-popover-checkbox"
 								onChange={(e) => {
-									// localStorage.setItem("popover-disabled", e.target.checked ? "true" : "false");
+									localStorage.setItem(
+										"popover-disabled",
+										e.target.checked ? "true" : "false"
+									)
 								}}
 							/>
 							<label
