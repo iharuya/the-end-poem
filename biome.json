@@ -4,10 +4,7 @@
 		"ignore": [
 			".gitignore",
 			"node_modules",
-			"package-lock.json",
-			"yarn.lock",
 			"pnpm-lock.yaml",
-			"bun.lockb",
 			"public",
 			".next"
 		]

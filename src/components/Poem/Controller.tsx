@@ -108,7 +108,7 @@ export const Controller: FC<PropsWithChildren<Props>> = ({
 			ref={containerRef}
 			onTouchMove={handleTouchMove}
 			onTouchStart={handleTouchStart}
-			className="overflow-y-auto max-h-screen" // Adjust styling as needed
+			className="overflow-y-auto max-h-screen"
 		>
 			{children}
 		</div>
