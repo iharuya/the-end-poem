@@ -31,6 +31,16 @@ const minecraftFont = localFont({
 	]
 })
 
+const minecraftFontJP = localFont({
+	src: [
+		{
+			path: "../fonts/unifont_jp-15.1.05.otf",
+			weight: "400",
+			style: "normal"
+		}
+	]
+})
+
 export async function generateStaticParams() {
 	return locales.map((locale) => ({ lang: locale }))
 }
@@ -87,9 +97,10 @@ export default function RootLayout({
 	children: ReactNode
 	params: { lang: Locale }
 }) {
+	const font = params.lang === "ja" ? minecraftFontJP : minecraftFont
 	return (
 		<html lang={params.lang}>
-			<body className={clsx(minecraftFont.className, "w-full h-full")}>
+			<body className={clsx(font.className, "w-full h-full")}>
 				<div className={styles.background}>
 					<LocaleSwitcher
 						currentLocale={params.lang}
